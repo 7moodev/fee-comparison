@@ -19,7 +19,7 @@ export default function Footer() {
 
       <div className="footer-disclaimer">
         Data provided for informational purposes only. Fees may vary and are subject to change. Please verify current
-        fees with your broker before trading.
+        fees with your exchange/broker before trading.
       </div>
     </footer>
   )

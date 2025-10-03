@@ -24,7 +24,7 @@ const ExchangeLogo: React.FC<ExchangeLogoProps> = ({ exchangeName, size = 24 }) 
   const logoPath = getLogoPath(exchangeName)
 
   return (
-    <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+    <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "8px" }}>
       {logoPath && (
         <img
           src={logoPath || "/placeholder.svg"}
