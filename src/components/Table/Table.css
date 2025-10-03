@@ -1,0 +1,109 @@
+.table-container {
+  overflow-x: auto;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.fee-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  font-size: 0.95rem;
+}
+
+.fee-table thead {
+  background: #f8f9fa;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.fee-table th {
+  padding: 1rem;
+  text-align: center;
+  font-weight: 600;
+  color: #495057;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.fee-table th.sortable {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.fee-table th.sortable:hover {
+  background-color: #e9ecef;
+}
+
+.sort-indicator {
+  display: inline-block;
+  margin-left: 0.25rem;
+  color: #6c757d;
+  font-size: 0.875rem;
+}
+
+.fee-table td {
+  padding: 1rem;
+  text-align: center;
+  border-top: 1px solid #e9ecef;
+  color: #213547;
+}
+
+.fee-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.cell-with-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.token-unit {
+  color: #6c757d;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.no-results {
+  padding: 2rem !important;
+  text-align: center;
+  color: #6c757d;
+  font-style: italic;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .fee-table {
+    font-size: 0.85rem;
+  }
+
+  .fee-table th,
+  .fee-table td {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .token-unit {
+    font-size: 0.65rem;
+  }
+
+  .cell-with-logo {
+    gap: 0.375rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .fee-table {
+    font-size: 0.75rem;
+  }
+
+  .fee-table th,
+  .fee-table td {
+    padding: 0.5rem 0.25rem;
+  }
+
+  .sort-indicator {
+    font-size: 0.75rem;
+  }
+}

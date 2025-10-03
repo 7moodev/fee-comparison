@@ -1,0 +1,48 @@
+.notional-selector {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.notional-selector button {
+  flex: 1;
+  padding: 0.625rem 1rem;
+  background-color: #f8f9fa;
+  color: #495057;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.notional-selector button:hover {
+  background-color: #e9ecef;
+  border-color: #0051ff;
+}
+
+.notional-selector button.active {
+  background-color: #0051ff;
+  color: #ffffff;
+  border-color: #0051ff;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .notional-selector button {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .notional-selector {
+    gap: 0.375rem;
+  }
+
+  .notional-selector button {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+}

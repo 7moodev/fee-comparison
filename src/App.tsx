@@ -1,34 +1,77 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+"use client"
+
+import { useState } from "react"
+import fees from "./data/cleaned_data_large.json"
+import Table from "./components/Table/Table"
+import Dropdown from "./components/Dropdown/Dropdown"
+import NotionalSelector from "./components/NotionalSelector/NotionalSelector"
+import Footer from "./components/Footer/Footer"
+import type { FeeEntry } from "./types"
+import "./App.css"
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [selectedSymbol, setSelectedSymbol] = useState<string | null>(null)
+  const [selectedSource, setSelectedSource] = useState<string | null>(null)
+  const [notional, setNotional] = useState(100)
+  const [sortConfig, setSortConfig] = useState<{ key: "maker" | "taker" | null; direction: "asc" | "desc" }>({
+    key: null,
+    direction: "asc",
+  })
+
+  const symbols = Array.from(new Set(fees.map((f: FeeEntry) => f.symbol)))
+  const sources = Array.from(new Set(fees.map((f: FeeEntry) => f.source)))
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="app-container">
+      <div className="app-content">
+        <header className="app-header">
+          <h1 className="app-title">Broker Fee Comparison</h1>
+          <p className="app-subtitle">Compare trading fees across different cryptocurrency exchanges</p>
+        </header>
+
+        <div className="controls-wrapper">
+          <div className="controls-grid">
+            <div className="control-item">
+              <label className="control-label">Trading Pair</label>
+              <Dropdown
+                options={symbols}
+                selected={selectedSymbol}
+                onChange={setSelectedSymbol}
+                placeholder="Select pair..."
+                type="symbol"
+              />
+            </div>
+
+            <div className="control-item">
+              <label className="control-label">Exchange</label>
+              <Dropdown
+                options={sources}
+                selected={selectedSource}
+                onChange={setSelectedSource}
+                placeholder="Select exchange..."
+                type="source"
+              />
+            </div>
+
+            <div className="control-item">
+              <label className="control-label">Notional Amount</label>
+              <NotionalSelector selected={notional} onChange={setNotional} />
+            </div>
+          </div>
+
+          <Table
+            data={fees}
+            notional={notional}
+            selectedSymbol={selectedSymbol}
+            selectedSource={selectedSource}
+            sortConfig={sortConfig}
+            onSort={setSortConfig}
+          />
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+
+      <Footer />
+    </div>
   )
 }
 
