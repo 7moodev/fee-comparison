@@ -48,3 +48,11 @@ npm run build
 ```
 npm run preview
 ```
+
+
+
+# General Assumptions:
+- The key 'fees' in the provided data object contained maker/taker outputs for various notionals. The values 100, 500, and 1000 were interpreted as quote amounts (in this case, EUR), and their corresponding entries represent the resulting token outputs.
+- Instead of a simple text-based search bar for tokens and exchanges, a searchable dropdown (combo box) was implemented to enhance user experience and usability.
+- The formatting transformation from XRPEUR → XRP/EUR was implemented using a predefined list of common quote assets. In future iterations, this approach can be extended to dynamically support additional quote currencies.
+
