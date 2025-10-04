@@ -1,5 +1,5 @@
 
-# Crypto Exchanges Purchase Outputs Comparison Tool
+# Crypto Exchanges Purchase Outputs Comparison Tool [![Vercel](https://skillicons.dev/icons?i=vercel&theme=dark&perline=15)](https://fee-comparison.vercel.app/)
 
 A simple React-Vite app that displays maker/taker outputs of various digital assets across different crypto exchanges. It’s built with TypeScript for type safety and Vite for fast development and optimized builds.
 
