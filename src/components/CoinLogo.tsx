@@ -15,7 +15,7 @@ const CoinLogo: React.FC<CoinLogoProps> = ({ symbol, size = 24 }) => {
     // if (currencyUpper === "XRP") {
     //   return `src/assets/coins/XRP.webp`
     // }
-    return `src/assets/coins/${currencyUpper}.png`
+    return `coins/${currencyUpper}.png`
   }
 
   const baseLogo = getLogoPath(base)

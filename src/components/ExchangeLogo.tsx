@@ -11,11 +11,11 @@ const ExchangeLogo: React.FC<ExchangeLogoProps> = ({ exchangeName, size = 24 }) 
 
     // Map common exchange names to their logo files
     const exchangeMap: Record<string, string> = {
-      kraken: "src/assets/exchanges/KRAKEN.png",
-      coinbase: "src/assets/exchanges/COINBASE.png",
-      bitstamp: "src/assets/exchanges/BITSTAMP.png",
-      bitvavo: "src/assets/exchanges/BITVAVO.png",
-      binance: "src/assets/exchanges/BINANCE.png",
+      kraken: "exchanges/KRAKEN.png",
+      coinbase: "exchanges/COINBASE.png",
+      bitstamp: "exchanges/BITSTAMP.png",
+      bitvavo: "exchanges/BITVAVO.png",
+      binance: "exchanges/BINANCE.png",
     }
 
     return exchangeMap[exchangeLower] || null
