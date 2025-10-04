@@ -5,8 +5,8 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-info">
-          <div className="footer-title">Crypto Exchanges Fee Comparison Tool</div>
-          <div className="footer-description">Compare trading fees across different crypto exchanges</div>
+          <div className="footer-title">Purchase Output Comparison Tool</div>
+          <div className="footer-description">Compare outputs for purchasing digital assets across different cryptocurrency exchanges</div>
         </div>
 
         <div className="footer-credit">

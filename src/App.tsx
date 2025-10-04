@@ -25,8 +25,8 @@ function App() {
     <div className="app-container">
       <div className="app-content">
         <header className="app-header">
-          <h1 className="app-title">Crypto Exchanges Fee Overview</h1>
-          <p className="app-subtitle">Compare trading fees across different cryptocurrency exchanges</p>
+          <h1 className="app-title">Purchase Output Comparison</h1>
+          <p className="app-subtitle">Compare purchase outputs across different cryptocurrency exchanges</p>
         </header>
 
         <div className="controls-wrapper">
