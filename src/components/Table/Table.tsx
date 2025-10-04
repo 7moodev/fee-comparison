@@ -1,6 +1,6 @@
 "use client"
 
-import { useMemo, useState } from "react"
+import { useMemo, useState, useEffect } from "react"
 import type { FeeEntry } from "@/types"
 import CoinLogo from "../CoinLogo"
 import ExchangeLogo from "../ExchangeLogo"
@@ -73,6 +73,11 @@ export default function Table({ data, notional, selectedSymbol, selectedSource, 
       return sortConfig.direction === "asc" ? aVal - bVal : bVal - aVal
     })
   }, [rows, sortConfig])
+
+  //cruical for when on not on the first page and a filter is applied
+  useEffect(() => {
+    setCurrentPage(1)
+  }, [selectedSymbol, selectedSource])
 
   const totalPages = Math.ceil(sortedRows.length / rowsPerPage)
   const startIndex = (currentPage - 1) * rowsPerPage
